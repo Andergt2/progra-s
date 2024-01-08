@@ -1,0 +1,43 @@
+//*Punteros Manejo de Archivos en C 
+
+#include <stdio.h> 
+
+// utilizar la funcion fopen (), para abrir el archivo (*txt) 
+
+int main() { 
+
+  FILE *Archivo =fopen("prueba1.txt","a"); 
+
+  
+  if(Archivo == NULL){ 
+
+    printf("error al intentar crear o acceder al archivo \n"); 
+
+
+  }else { 
+
+       
+
+      printf("ingrese texto que desea añadir "); 
+
+    char letra; 
+
+    while((letra = getchar()) != '\n'){ 
+
+        
+      fputc( letra,Archivo);  // fputc es para escribir en el archivo  
+
+      
+
+    } 
+
+   
+  } 
+
+  fclose(Archivo); 
+
+  
+
+  return 0; 
+
+} 
