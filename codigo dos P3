@@ -1,0 +1,37 @@
+//*Punteros Manejo de Archivos en C 
+
+  
+
+#include <stdio.h> 
+
+
+int main() { 
+
+
+  FILE *fd; 
+
+  char direc[] = "prueba//prueba1.txt"; 
+
+  
+
+  fd = fopen(direc, "r"); 
+
+  if(fd == NULL){ 
+
+    printf("el archivo no existe\n"); 
+
+       
+
+  }else { 
+
+    printf("el archivo se abrio correctamente\n"); 
+
+      printf("su ubicacion es: %s \n", direc); 
+
+  } 
+
+  
+
+  return 0; 
+
+} 
