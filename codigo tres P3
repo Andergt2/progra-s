@@ -1,0 +1,73 @@
+#include <stdio.h> 
+
+#include <stdlib.h> 
+
+  
+
+struct DatosPersonales { 
+
+  char nombre[30]; 
+
+  char correo[30]; 
+
+} cantidad[2]; 
+
+  
+
+int main(void) { 
+
+  FILE *Archivo = fopen("datos1.txt", "a"); 
+
+  
+
+  if (Archivo == NULL) { 
+
+    printf("error al intentar crear o acceder al archivo\n"); 
+
+  } else { 
+
+    for (int i = 0; i < 2; i++) { 
+
+      fflush(stdin); 
+
+      printf("ingrese su nombre: "); 
+
+      scanf("%s", cantidad[i].nombre); 
+
+      printf("ingrese su correo: "); 
+
+      scanf("%s", cantidad[i].correo); 
+
+      printf("\n"); 
+
+    } 
+
+
+    for (int i = 0; i < 2; i++) { 
+
+      printf("Nombre: %s\n", cantidad[i].nombre); 
+
+      printf("Correo: %s\n", cantidad[i].correo); 
+
+    } 
+
+
+    // escribir datos en el archivo en el .txt 
+
+    for (int i = 0; i < 2; i++) { 
+
+      fprintf(Archivo, "Nombre: %s\n", cantidad[i].nombre); 
+
+      fprintf(Archivo, "Correo: %s\n", cantidad[i].correo); 
+
+      fprintf(Archivo, "\n"); 
+
+    } 
+
+
+    fclose(Archivo); 
+
+  } 
+
+  return 0; 
+} 
